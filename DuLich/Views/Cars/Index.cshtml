@@ -1,0 +1,26 @@
+﻿@model IEnumerable<DuLich.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cars</h2>
+
+<p>
+    @Html.ActionLink("Create a new Car", "Create")
+</p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="text-right">@Html.ActionLink("Edit", "", new { id = item.Id })</p>
+            <p class="text-danger">@Html.DisplayFor(modelItem => item.Name)</p>
+            <p class="text-warning">@Html.DisplayFor(modelItem => item.Seat.Name)</p>
+            <img class="img-responsive" alt="Image" style="width: 100%" src="@Html.Raw(@Html.DisplayFor(modelItem => item.Image))" />
+        </div>
+    }
+</div>
+@* @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@

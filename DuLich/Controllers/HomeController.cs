@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DuLich.Models;
 
 namespace DuLich.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext _dbContext;
+
+        public HomeController()
+        {
+            _dbContext = new ApplicationDbContext();
+        }
         public ActionResult Index()
         {
             return View();

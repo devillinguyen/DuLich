@@ -13,7 +13,7 @@ namespace DuLich.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710150408096_AddNameColumnToApplicationUser"; }
+            get { return "201710151028106_AddNameColumnToApplicationUser"; }
         }
         
         string IMigrationMetadata.Source

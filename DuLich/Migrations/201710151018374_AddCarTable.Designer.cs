@@ -7,13 +7,13 @@ namespace DuLich.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class PopulateSeatTable : IMigrationMetadata
+    public sealed partial class AddCarTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateSeatTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCarTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710150335559_PopulateSeatTable"; }
+            get { return "201710151018374_AddCarTable"; }
         }
         
         string IMigrationMetadata.Source

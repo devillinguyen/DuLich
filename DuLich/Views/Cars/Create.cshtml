@@ -1,14 +1,14 @@
-﻿@model DuLich.Models.Car
+﻿@model DuLich.ViewModels.CarViewModel
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Create a Car</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create","Cars")) 
 {
     @Html.AntiForgeryToken()
     
@@ -25,10 +25,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SeatId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Seat, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SeatId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SeatId, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Seat, new SelectList(Model.Seats,"Id","Name"), "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Seat, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -89,7 +89,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index","Home")
+    @Html.ActionLink("Back to List", "Index","Cars")
 </div>
 
 @section Scripts {
