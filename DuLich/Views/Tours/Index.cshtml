@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DuLich.Models.Tour>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tours</h2>
+
+<p>
+    @Html.ActionLink("Create a new Tour", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServicePackage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description2)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServicePackage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description2)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "", new { id=item.Id }) |
+            @Html.ActionLink("Details", "", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

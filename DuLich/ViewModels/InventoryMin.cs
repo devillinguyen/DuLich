@@ -15,7 +15,7 @@ namespace DuLich.ViewModels
         // Fields
         private readonly int _minimum;
         // Constructors
-        public InventoryMin(int minValue) : base("Giá trị nhỏ nhất cho phép nhập là 1.")
+        public InventoryMin(int minValue) : base("Giá trị nhập vào phải là số nguyên dương.")
         {
             _minimum = minValue;
         }

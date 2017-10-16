@@ -9,8 +9,10 @@ namespace DuLich.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Car> Cars { get; set; }
         public DbSet<Seat> Seats { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Coach> Coaches { get; set; }
+        public DbSet<Tour> Tours { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
